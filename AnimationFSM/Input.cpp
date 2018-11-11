@@ -2,14 +2,14 @@
 
 Input::Input() 
 {
-	m_current = IDLE;
+	m_current = 0;
 }
 Input::~Input() {}
 
-void Input::setCurrent(Action a) {
+void Input::setCurrent(int a) {
 	m_current = a;
 }
 
-Input::Action Input::getCurrent() {
+int Input:: getCurrent() {
 	return m_current;
 }

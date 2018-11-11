@@ -6,18 +6,10 @@ public:
 	Input();
 	~Input();
 
-	enum Action
-	{
-		IDLE,
-		UP,
-		LEFT,
-		RIGHT
-	};
-
-	void setCurrent(Action);
-	Action getCurrent();
+	void setCurrent(int a);
+	int getCurrent();
 
 private:
-	Action m_current;
+	int m_current;
 };
 #endif

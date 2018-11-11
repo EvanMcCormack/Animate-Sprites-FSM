@@ -6,6 +6,8 @@
 #include <Debug.h>
 
 using namespace std;
+// Setup Players Default Animated Sprite
+
 
 int main()
 {
@@ -19,7 +21,6 @@ int main()
 		return EXIT_FAILURE;
 	}
 
-	// Setup Players Default Animated Sprite
 	AnimatedSprite animated_sprite(texture);
 	animated_sprite.addFrame(sf::IntRect(3, 3, 84, 84));
 	animated_sprite.addFrame(sf::IntRect(88, 3, 84, 84));
@@ -34,7 +35,7 @@ int main()
 	
 	// Start the game loop
 	while (window.isOpen())
-	{
+	{		
 		// Process events
 		sf::Event event;
 		while (window.pollEvent(event))
@@ -46,21 +47,34 @@ int main()
 				window.close();
 				break;
 			case sf::Event::KeyPressed:
-				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num0)) //Idling
 				{
-					input.setCurrent(Input::Action::LEFT);
+					input.setCurrent(0);
+
 				}
-				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1)) //Climbing
 				{
-					input.setCurrent(Input::Action::RIGHT);
+					input.setCurrent(1);
+					
 				}
-				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2)) //Jumping
 				{
-					input.setCurrent(Input::Action::UP);
+					input.setCurrent(2);
 				}
-				break;
+				//else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num4)) //Swording
+				//{
+				//	input.setCurrent(4);
+				//}
+				//else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num5)) //Shoveling
+				//{
+				//	input.setCurrent(5);
+				//}
+				//else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num6)) //Hammering
+				//{
+				//	input.setCurrent(6);
+				//}
+				//break;
 			default:
-				input.setCurrent(Input::Action::IDLE);
 				break;
 			}
 		}
