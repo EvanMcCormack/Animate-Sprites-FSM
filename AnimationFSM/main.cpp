@@ -29,6 +29,41 @@ int main()
 	animated_sprite.addFrame(sf::IntRect(343, 3, 84, 84));
 	animated_sprite.addFrame(sf::IntRect(428, 3, 84, 84));
 
+	AnimatedSprite animated_climb(texture);
+	animated_climb.addFrame(sf::IntRect(3, 88, 84, 84));
+	animated_climb.addFrame(sf::IntRect(3, 173, 84, 84));
+	animated_climb.addFrame(sf::IntRect(3, 258, 84, 84));
+	animated_climb.addFrame(sf::IntRect(3, 343, 84, 84));
+	animated_climb.addFrame(sf::IntRect(3, 428, 84, 84));
+
+	AnimatedSprite animated_jump(texture);
+	animated_jump.addFrame(sf::IntRect(88, 88, 84, 84));
+	animated_jump.addFrame(sf::IntRect(88, 173, 84, 84));
+	animated_jump.addFrame(sf::IntRect(88, 258, 84, 84));
+	animated_jump.addFrame(sf::IntRect(88, 343, 84, 84));
+	animated_jump.addFrame(sf::IntRect(88, 428, 84, 84));
+
+	AnimatedSprite animated_walk(texture);
+	animated_walk.addFrame(sf::IntRect(173, 88, 84, 84));
+	animated_walk.addFrame(sf::IntRect(173, 173, 84, 84));
+	animated_walk.addFrame(sf::IntRect(173, 258, 84, 84));
+	animated_walk .addFrame(sf::IntRect(173, 343, 84, 84));
+	animated_walk.addFrame(sf::IntRect(173, 428, 84, 84));
+
+	AnimatedSprite animated_sword(texture);
+	animated_sword.addFrame(sf::IntRect(258, 88, 84, 84));
+	animated_sword.addFrame(sf::IntRect(258, 173, 84, 84));
+	animated_sword.addFrame(sf::IntRect(258, 258, 84, 84));
+	animated_sword.addFrame(sf::IntRect(258, 343, 84, 84));
+	animated_sword.addFrame(sf::IntRect(258, 428, 84, 84));
+
+	AnimatedSprite animated_shoveling(texture);
+	animated_shoveling.addFrame(sf::IntRect(343, 88, 84, 84));
+	animated_shoveling.addFrame(sf::IntRect(343, 173, 84, 84));
+	animated_shoveling.addFrame(sf::IntRect(343, 258, 84, 84));
+	animated_shoveling.addFrame(sf::IntRect(343, 343, 84, 84));
+	animated_shoveling.addFrame(sf::IntRect(343, 428, 84, 84));
+
 	// Setup the Player
 	Player player(animated_sprite);
 	Input input;
@@ -50,29 +85,34 @@ int main()
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num0)) //Idling
 				{
 					input.setCurrent(0);
+					player.getAnimatedSprite() = animated_sprite;
 
 				}
 				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1)) //Climbing
 				{
 					input.setCurrent(1);
-					
+					player.getAnimatedSprite() = animated_climb;
 				}
 				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2)) //Jumping
 				{
 					input.setCurrent(2);
+					player.getAnimatedSprite() = animated_jump;
 				}
-				//else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num4)) //Swording
-				//{
-				//	input.setCurrent(4);
-				//}
-				//else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num5)) //Shoveling
-				//{
-				//	input.setCurrent(5);
-				//}
-				//else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num6)) //Hammering
-				//{
-				//	input.setCurrent(6);
-				//}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num3)) //Walking
+				{
+					input.setCurrent(3);
+					player.getAnimatedSprite() = animated_walk;
+				}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num4)) //Sword
+				{
+					input.setCurrent(4);
+					player.getAnimatedSprite() = animated_sword;
+				}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num5)) //Shoveling
+				{
+					input.setCurrent(5);
+					player.getAnimatedSprite() = animated_shoveling;
+				}
 				//break;
 			default:
 				break;

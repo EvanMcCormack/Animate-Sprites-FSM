@@ -27,7 +27,10 @@
     <ClInclude Include="Input.h" />
     <ClInclude Include="Jumping.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Shoveling.h" />
     <ClInclude Include="State.h" />
+    <ClInclude Include="Swording.h" />
+    <ClInclude Include="Walking.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AnimatedSprite.cpp" />
@@ -38,6 +41,9 @@
     <ClCompile Include="Jumping.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Shoveling.cpp" />
+    <ClCompile Include="Swording.cpp" />
+    <ClCompile Include="Walking.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md" />

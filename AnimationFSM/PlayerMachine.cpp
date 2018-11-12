@@ -42,3 +42,18 @@ void PlayerFSM::climbing()
 {
 	m_current->climbing(this);
 }
+
+void PlayerFSM::walking()
+{
+	m_current->walking(this);
+}
+
+void PlayerFSM::swording()
+{
+	m_current->swording(this);
+}
+
+void PlayerFSM::shoveling()
+{
+	m_current->shoveling(this);
+}
