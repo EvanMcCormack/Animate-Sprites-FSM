@@ -9,13 +9,17 @@ class Player
 {
 private:
 	PlayerFSM m_state;
-	AnimatedSprite m_animated_sprite;
+	AnimatedSprite m_animated_sprite[7];
 	Player();
+	int index = 0;
+	int m_currentIndex = 0;
+	int m_previousIndex = 0;
 
 public:
 	Player(const AnimatedSprite&);
 	~Player();
 	AnimatedSprite& getAnimatedSprite();
+	void setNewTexture(AnimatedSprite a);
 	void handleInput(Input);
 	void update();
 };

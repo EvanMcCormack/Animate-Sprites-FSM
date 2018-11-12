@@ -57,3 +57,8 @@ void PlayerFSM::shoveling()
 {
 	m_current->shoveling(this);
 }
+
+void PlayerFSM::hammering()
+{
+	m_current->hammering(this);
+}

@@ -1,6 +1,7 @@
 #include <Jumping.h>
 #include <Climbing.h>
 #include <Idle.h>
+#include <Swording.h>
 
 #include <string>
 
@@ -14,5 +15,12 @@ void Jumping::climbing(PlayerFSM* a)
 {
 	std::cout << "Jumping -> Climbing" << std::endl;
 	a->setCurrent(new Climbing());
+	delete this;
+}
+
+void Jumping::swording(PlayerFSM* a)
+{
+	std::cout << "Jumping -> Swording" << std::endl;
+	a->setCurrent(new Swording());
 	delete this;
 }

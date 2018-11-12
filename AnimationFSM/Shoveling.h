@@ -9,6 +9,7 @@ public:
 	Shoveling() {};
 	~Shoveling() {};
 	void idle(PlayerFSM* a);
+	void shoveling(PlayerFSM* a);
 };
 
 #endif // !SHOVELING_H

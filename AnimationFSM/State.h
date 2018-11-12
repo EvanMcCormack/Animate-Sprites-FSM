@@ -39,6 +39,10 @@ public:
 	{
 		DEBUG_MSG("State::Shoveling");
 	}
+	virtual void hammering(PlayerFSM* a)
+	{
+		DEBUG_MSG("State::Hammering");
+	}
 
 };
 

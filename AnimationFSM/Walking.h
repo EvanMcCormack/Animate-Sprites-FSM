@@ -9,7 +9,9 @@ public:
 	Walking() {};
 	~Walking() {};
 	void idle(PlayerFSM* a);
+	void climbing(PlayerFSM* a);
 	void jumping(PlayerFSM* a);
+	void walking(PlayerFSM* a);
 };
 
 #endif // !WALKING_H

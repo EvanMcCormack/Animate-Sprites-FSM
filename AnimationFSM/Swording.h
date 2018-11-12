@@ -9,6 +9,8 @@ public:
 	Swording() {};
 	~Swording() {};
 	void idle(PlayerFSM* a);
+	void walking(PlayerFSM* a);
+	void swording(PlayerFSM* a);
 };
 
 #endif // !SHOVELING_H

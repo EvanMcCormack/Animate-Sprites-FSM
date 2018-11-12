@@ -21,6 +21,9 @@ int main()
 		return EXIT_FAILURE;
 	}
 
+	std::cout << "Press: 0) for Idling \n       1) for Climbing \n       2) for Jumping \n       3) for Walking \n       4) for Swording \n       5) for Shoveling \n       6) for Hammering " << std::endl;
+
+
 	AnimatedSprite animated_sprite(texture);
 	animated_sprite.addFrame(sf::IntRect(3, 3, 84, 84));
 	animated_sprite.addFrame(sf::IntRect(88, 3, 84, 84));
@@ -64,8 +67,22 @@ int main()
 	animated_shoveling.addFrame(sf::IntRect(343, 343, 84, 84));
 	animated_shoveling.addFrame(sf::IntRect(343, 428, 84, 84));
 
+	AnimatedSprite animated_hammering(texture);
+	animated_hammering.addFrame(sf::IntRect(428, 88, 84, 84));
+	animated_hammering.addFrame(sf::IntRect(428, 173, 84, 84));
+	animated_hammering.addFrame(sf::IntRect(428, 258, 84, 84));
+	animated_hammering.addFrame(sf::IntRect(428, 343, 84, 84));
+	animated_hammering.addFrame(sf::IntRect(428, 428, 84, 84));
+
 	// Setup the Player
 	Player player(animated_sprite);
+	player.setNewTexture(animated_sprite);
+	player.setNewTexture(animated_climb);
+	player.setNewTexture(animated_jump);
+	player.setNewTexture(animated_walk);
+	player.setNewTexture(animated_sword);
+	player.setNewTexture(animated_shoveling);
+	player.setNewTexture(animated_hammering);
 	Input input;
 	
 	// Start the game loop
@@ -81,39 +98,37 @@ int main()
 				// Close window : exit
 				window.close();
 				break;
+
 			case sf::Event::KeyPressed:
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num0)) //Idling
 				{
 					input.setCurrent(0);
-					player.getAnimatedSprite() = animated_sprite;
-
 				}
 				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1)) //Climbing
 				{
 					input.setCurrent(1);
-					player.getAnimatedSprite() = animated_climb;
 				}
 				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2)) //Jumping
 				{
 					input.setCurrent(2);
-					player.getAnimatedSprite() = animated_jump;
 				}
 				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num3)) //Walking
 				{
 					input.setCurrent(3);
-					player.getAnimatedSprite() = animated_walk;
 				}
 				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num4)) //Sword
 				{
 					input.setCurrent(4);
-					player.getAnimatedSprite() = animated_sword;
 				}
 				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num5)) //Shoveling
 				{
 					input.setCurrent(5);
-					player.getAnimatedSprite() = animated_shoveling;
 				}
-				//break;
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num6))
+				{
+					input.setCurrent(6);
+				}
+				break;
 			default:
 				break;
 			}

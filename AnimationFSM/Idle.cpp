@@ -4,6 +4,7 @@
 #include <Walking.h>
 #include <Swording.h>
 #include <Shoveling.h>
+#include <Hammering.h>
 
 #include <string>
 
@@ -38,5 +39,12 @@ void Idle::shoveling(PlayerFSM* a)
 {
 	std::cout << "Idle -> Shoveling" << std::endl;
 	a->setCurrent(new Shoveling());
+	delete this;
+}
+
+void Idle::hammering(PlayerFSM* a)
+{
+	std::cout << "Idle -> Hammering" << std::endl;
+	a->setCurrent(new Hammering());
 	delete this;
 }

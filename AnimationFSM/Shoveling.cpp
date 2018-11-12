@@ -9,3 +9,10 @@ void Shoveling::idle(PlayerFSM * a)
 	a->setCurrent(new Idle());
 	delete this;
 }
+
+void Shoveling::shoveling(PlayerFSM* a)
+{
+	std::cout << "Still Shoveling" << std::endl;
+	a->setCurrent(new Shoveling());
+	delete this;
+}
